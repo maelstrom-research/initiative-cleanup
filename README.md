@@ -32,6 +32,11 @@ OBiBa Opal and Mica Python client packages and Python `requests`.
 
 #### To export Network associated documents:
 ```bash
-python <SCRIPTS-PATH>/main.py --mica https://mica-staging.maelstrom-research.org --user <UAERNAME> --password <PASSWORD> 
+python3 <SCRIPTS-PATH>/main.py --mica <MICA-SERVER-URL> --user <UAERNAME> --password <PASSWORD> 
+```
+Example:
+
+```bash
+python3 ~/project/initiative-cleanup/src/main/python/main.py --mica http://localhost:8082 --user administrator --password password
 ```
 
