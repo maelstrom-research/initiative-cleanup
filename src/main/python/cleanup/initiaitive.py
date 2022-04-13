@@ -50,29 +50,37 @@ class MlstrInitiativeCleanup:
     config = self.__sendGetMicaRequest('config/harmonization-study/form-custom')
     schema = json.loads(config['schema'])
     schemaProperties = schema['properties']
+    dirty = False
 
-    schemaProperties.pop('populations')
-    self.__logAction("Removed 'populations' from form 'schema'.", 2)
+    if 'populations' in schemaProperties:
+      schemaProperties.pop('populations')
+      self.__logAction("Removed 'populations' from form 'schema'.", 2)
+      dirty = True
 
-    schemaProperties.pop('populationModel')
-    self.__logAction("Removed 'populationModel' from form 'schema'.", 2)
-    self.__logAction("Removed 'populationModel' from form 'definition'.", 2)
+    if 'populationModel' in schemaProperties:
+      schemaProperties.pop('populationModel')
+      self.__logAction("Removed 'populationModel' from form 'schema'.", 2)
+      self.__logAction("Removed 'populationModel' from form 'definition'.", 2)
+      dirty = True
 
-    schemaProperties.pop('harmonizationDesign')
-    self.__logAction("Removed 'harmonizationDesign' from form 'schema'.", 2)
+    if 'harmonizationDesign' in schemaProperties:
+      schemaProperties.pop('harmonizationDesign')
+      self.__logAction("Removed 'harmonizationDesign' from form 'schema'.", 2)
+      dirty = True
 
     config['schema'] = json.dumps(schema)
-    if self.__sendPutMicaRequest('config/harmonization-study/form-custom', config):
+
+    if dirty and  self.__sendPutMicaRequest('config/harmonization-study/form-custom', config):
       self.__logAction("Saved initiative configuration form.", 2)
 
-    stars = '*' * 3
-    notice = """
+      stars = '*' * 3
+      notice = """
 %s Due to the complexity of the form 'definition' the following fields must be manually removed in Mica's administration\n%s section under 'Administration / Harmonization Initiative Configuration / Definition (TAB)':
 %s - populations
 %s - populationModel
 %s - harmonizationDesign
 """ % (stars, stars, stars, stars, stars)
-    self.__logAction(notice, 0)
+      self.__logAction(notice, 0)
 
   def __cleanTaxonomy(self):
     self.__logAction("Cleaning up initiative taxonomy...", 0)
