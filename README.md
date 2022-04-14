@@ -19,7 +19,7 @@ This utility aligns the new Mica installation with the new Maelstrom Research st
 - Remove references to `PopulationModel` from data and schema form.
 - Remove references to `harmonizationDesign` from data, schema form and the `Mica_study` taxonomy.
 
-> Due to the complexity of the form definition, the fields must be manually removed in Mica's administration section under `Administration / Harmonization Initiative Configuration / Definition (TAB)`.  
+> Due to the complexity of the form definition, the above fields must be manually removed in Mica's administration section under `Administration / Harmonization Initiative Configuration / Definition (TAB)`.  
 
 ## Dependencies
 Python `requests` package.
