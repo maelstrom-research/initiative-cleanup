@@ -36,7 +36,7 @@ deactivate # To exit the virtual environment
 
 ## Usage
 
-#### To export Network associated documents:
+#### To run the cleanup script:
 ```bash
 python3 <SCRIPTS-PATH>/main.py --mica <MICA-SERVER-URL> --user <UAERNAME> --password <PASSWORD> 
 ```
