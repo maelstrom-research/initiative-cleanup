@@ -141,7 +141,7 @@ class MlstrInitiativeCleanup:
               if self.__sendPutMicaRequest('draft/harmonization-study/%s/_publish' % initiativeId, None):
                 self.__logAction("Published initiative %s." % initiativeId, 4)
 
-  def _ensureValidMicaVersion(self):
+  def __ensureValidMicaVersion(self):
     config = self.__sendGetMicaRequest("config")
     version = re.search(r"(\d+)\.(\d+)\.(\d+)", config['version'])
     [major, minor, patch] = list(map(int, version.groups()))
@@ -150,7 +150,7 @@ class MlstrInitiativeCleanup:
 
 
   def process(self):
-    self._ensureValidMicaVersion()
+    self.__ensureValidMicaVersion()
     self.__cleanupInitiatives()
     self.__cleanupInitiativeConfig()
     self.__cleanTaxonomy()
