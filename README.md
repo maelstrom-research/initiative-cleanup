@@ -8,23 +8,31 @@ Mica 4.7 introduced several new changes to account for the new harmonization sta
 - Renaming of `Harmonized Dataset` to `Harmonization Protocol`.
 - Addition of new fields to better describe a `Harmonization Protocol`.
 
-To minimize loss of data, Mica 4.7 migrates the old `populations` field as a new custom field in the `Harmonization Initiative` Form (see `Administration / Harmonization Initiative Configuration`). As a consequence, all customization of the old `populations` field are added under the new `populationModel` field in the same Form.
+To minimize loss of data, Mica 4.7 migrates the old `populations` field as a new custom field in the `Harmonization Initiative` Form (see `Administration / Harmonization Initiative Configuration`). Any customization done for the old `populations` field migrated under the new `populationModel` field in the same Form.
 
-To align the new Mica installation with the new Maelstrom Research standards, this utility removes the _obsolete_ fields listed below. Mica administrators **should not** run the script if these fields are to be kept.
+This utility aligns the new Mica installation with the new Maelstrom Research standards by removing the now _obsolete_ fields listed below:
+
+> Mica administrators **should not** run the script if these fields are to be kept.
 
 #### Harmonization Initiative Cleanup
 - Remove references to `populations` from data and schema form.
 - Remove references to `PopulationModel` from data and schema form.
-- Remove references to `harmonizationDesign` from data and schema form.
-- Remove references to `harmonizationDesign` in the `Mica_study` taxonomy.
+- Remove references to `harmonizationDesign` from data, schema form and the `Mica_study` taxonomy.
 
-> Due to the complexity of the form definition, the following fields must be manually removed in Mica's administration section under `Administration / Harmonization Initiative Configuration / Definition (TAB)`:  
-> - populations
-> - populationModel
-> - harmonizationDesign
+> Due to the complexity of the form definition, the fields must be manually removed in Mica's administration section under `Administration / Harmonization Initiative Configuration / Definition (TAB)`.  
 
 ## Dependencies
-OBiBa Opal and Mica Python client packages and Python `requests`.
+Python `requests` package.
+
+## Suggestion
+Use a virtual Python environment to prevent conflicts with current Python installation.
+
+```bash
+python3 -m venv venv  # create for the 1st time
+source venv/bin/activate
+
+deactivate # To exit the virtual environment 
+````
 
 ## Usage
 
