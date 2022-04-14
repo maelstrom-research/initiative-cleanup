@@ -8,9 +8,9 @@ Mica 4.7 introduced several new changes to account for the new harmonization sta
 - Renaming of `Harmonized Dataset` to `Harmonization Protocol`.
 - Addition of new fields to better describe a `Harmonization Protocol`.
 
-To minimize the loss of data, Mica 4.7 migrates the old `populations` field as a new custom field in the `Harmonization Initiative` Form (see `Administration / Harmonization Initiative Configuration`). As a consequence, all customization of the old `populations` field are also added under the new `populationModel` field in the same Form.
+To minimize loss of data, Mica 4.7 migrates the old `populations` field as a new custom field in the `Harmonization Initiative` Form (see `Administration / Harmonization Initiative Configuration`). As a consequence, all customization of the old `populations` field are added under the new `populationModel` field in the same Form.
 
-To align the new Mica installation with the new Maelstrom Research standard, this utility removes the _obsolete_ fields listed below. Mica administrator **should not** run the script if these fields are to be kept.
+To align the new Mica installation with the new Maelstrom Research standards, this utility removes the _obsolete_ fields listed below. Mica administrators **should not** run the script if these fields are to be kept.
 
 #### Harmonization Initiative Cleanup
 - Remove references to `populations` from data and schema form.
