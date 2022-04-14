@@ -1,8 +1,6 @@
 # Harmonization Initiative Cleanup Script
 
-Mica 4.7 introduced several new changes to account for the new harmonization standards put forward by [Maelstrom Research](https://www.maelstrom-research.org/). These changes  
-
-The main changes are:
+Mica 4.7 introduced several new changes to account for the new harmonization standards put forward by [Maelstrom Research](https://www.maelstrom-research.org/). The main changes are:
 
 - Renaming of `Harmonization Study` to `Harmonization Initiative`.
 - Addition of new fields to better describe a `Harmonization Initiative`.
