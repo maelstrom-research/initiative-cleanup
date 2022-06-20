@@ -21,6 +21,8 @@ This utility aligns the new Mica installation with the new Maelstrom Research st
 
 > Due to the complexity of the form definition, the above fields must be manually removed in Mica's administration section under `Administration / Harmonization Initiative Configuration / Definition (TAB)`.  
 
+> It is also recommended to remove the above obsolete fields from Mica public pages (`templates/study.ftl` and `templates/libs/study.ftl`).
+
 ## Dependencies
 Python `requests` package.
 
