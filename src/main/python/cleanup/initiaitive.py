@@ -145,7 +145,7 @@ class MlstrInitiativeCleanup:
     config = self.__sendGetMicaRequest("config")
     version = re.search(r"(\d+)\.(\d+)\.(\d+)", config['version'])
     [major, minor, patch] = list(map(int, version.groups()))
-    if major < 4 or minor < 7:
+    if major < 5 or minor < 0:
       raise Exception('Mica Version must be >= 4.7.0')
 
 
